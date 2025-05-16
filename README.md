@@ -3,8 +3,15 @@
 ### Fix for GoG version of Mad Max
 
 ### Usage
- * Put the EXE file into the game directory where `MadMax.exe` is located
- * Run the EXE
+Choose a version of your liking.  
+It's been reported that the injector version may prevent achievements from being obtained.
+
+ * **Injector (EXE) version**
+   * Put the EXE file into the game directory where `MadMax.exe` is located
+   * Run the EXE
+ * **DLL (dinput8.dll) version**
+   * Put `dinput8.dll` into the game directory where `MadMax.exe` is located
+   * Start the game as usual
 
 ### Notes
  * If the game is laggy in main menu, change the resolution or switch to borderless, apply, then switch back.
@@ -16,7 +23,7 @@ The crash is caused by a "Division by Zero" exception caused by a `DIV` instruct
 This instruction is supposed to retrieve the refresh rate of currently used screen.
 
 
-This program retrieves the correct refresh rate of the active screen, and patches the offending instruction with a `MOV r32, imm32` instruction, where `imm32` is the immediate 32-bit value of the screen's refresh rate in Hz.
+This program retrieves the correct refresh rate of the active screen, and patches the offending instruction with a `MOV r32, imm32` instruction, where `imm32` is the immediate 32-bit value of the screen's refresh rate in Hz, and `r32` is the `EAX` register.
 
 I already contacted GoG with technical details, hopefully they will fix it.
 
