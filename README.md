@@ -1,8 +1,13 @@
 # MadMaxCrashFix
 
-### Fix for GoG version of Mad Max
+### Fix for loading screen crash in Mad Max
 
 ### Usage
+
+### Steam Version
+ * Place `dinput8.dll` from `steamfix.zip` into the game directory where `MadMax.exe` is located.
+
+### GoG Version
 Choose a version of your liking.  
 It's been reported that the injector version may prevent achievements from being obtained.
 
@@ -26,11 +31,6 @@ This instruction is supposed to retrieve the refresh rate of currently used scre
 This program retrieves the correct refresh rate of the active screen, and patches the offending instruction with a `MOV r32, imm32` instruction, where `imm32` is the immediate 32-bit value of the screen's refresh rate in Hz, and `r32` is the `EAX` register.
 
 I already contacted GoG with technical details, hopefully they will fix it.
-
-### Steam version?
-Since the Steam version is still for some reason poisoned with Denuvo, I don't have a fix and this program won't work with it.
-
-Go fuck yourself, Denuvo.
 
 
 ### Disclaimer
