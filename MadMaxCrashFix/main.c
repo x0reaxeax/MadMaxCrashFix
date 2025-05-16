@@ -1,13 +1,6 @@
 // Only for GoG version of Mad Max
 // 
 // Put the exe file inside the game folder and run it.
-// 
-// Steam version to this day comes with Denuvo,
-// but is literally unplayable, 
-// because apparently it's too much work to patch an instruction,
-// after hoarding money for years now for a game that doesnt work.
-// 
-// Fuck your mother, Denuvo.
 
 #include <Windows.h>
 #include <stdio.h>

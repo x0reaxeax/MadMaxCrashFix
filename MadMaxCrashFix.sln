@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MadMaxCrashFix", "MadMaxCra
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MadMaxCrashFixDLL", "MadMaxCrashFixDLL\MadMaxCrashFixDLL.vcxproj", "{993D9F9A-4FAF-45DB-A444-1108358EEF3E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MadMaxCrashFixDLL-STEAM", "MadMaxCrashFixDLL-STEAM\MadMaxCrashFixDLL-STEAM.vcxproj", "{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{993D9F9A-4FAF-45DB-A444-1108358EEF3E}.Release|x64.Build.0 = Release|x64
 		{993D9F9A-4FAF-45DB-A444-1108358EEF3E}.Release|x86.ActiveCfg = Release|Win32
 		{993D9F9A-4FAF-45DB-A444-1108358EEF3E}.Release|x86.Build.0 = Release|Win32
+		{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}.Debug|x64.ActiveCfg = Debug|x64
+		{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}.Debug|x64.Build.0 = Debug|x64
+		{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}.Debug|x86.ActiveCfg = Debug|Win32
+		{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}.Debug|x86.Build.0 = Debug|Win32
+		{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}.Release|x64.ActiveCfg = Release|x64
+		{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}.Release|x64.Build.0 = Release|x64
+		{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}.Release|x86.ActiveCfg = Release|Win32
+		{EDB4EEAA-77E1-4A05-8A94-65078CCEE5EE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
