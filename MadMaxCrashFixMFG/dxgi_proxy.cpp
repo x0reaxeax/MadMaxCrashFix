@@ -92,8 +92,8 @@ _FINAL:
 /**
 * CreateDXGIFactory1
 *     -> hook returned IDXGIFactory1 vtable
-*         slot 7  = EnumAdapters        // inherited from IDXGIFactory
-*         slot 12 = EnumAdapters1       // native on IDXGIFactory1, maybe game uses this instead
+*         slot 7  = EnumAdapters        // IDXGIFactory
+*         slot 12 = EnumAdapters1       // IDXGIFactory1
 *
 * EnumAdapters / EnumAdapters1
 *     -> when adapter is returned, hook adapter vtable
@@ -422,6 +422,10 @@ HRESULT __stdcall Hooked_GetDisplayModeList(
 
     LocalConfig::Config config = LocalConfig::LoadConfig();
 
+    // TODO: largest available mode doesn't seem to be able to be applied.
+    //  check if the filtering is screwing up, by inserting a fugazi entry at the end
+    //  local test: latest matched mode is 1920x1080@360Hz
+
     UINT uTotalFilteredModes = 0;
     // caller capacity only matters when `pDesc != nullptr`
     UINT uCallerCapacity = (nullptr != pDesc && nullptr != pNumModes) ? *pNumModes : 0;
@@ -432,7 +436,8 @@ HRESULT __stdcall Hooked_GetDisplayModeList(
             && 
             pModeDescs[i].Height == config.dwDisplayHeight
         ) {
-            if (uModesWritten >= 256) {
+            if (uTotalFilteredModes >= 256) { // fix: `uTotalFilteredModes` should == `uModesWritten`, but if not, then allocate for all potential filtered modes
+                                              //  uModesWritten doesn't increment when pDesc is null, which is the case of requesting mode count
                 // game can't handle more than 256 modes, so clamp it and sacrifice some modes,
                 //  even tho who tf has more than 256 modes for a single resolution, get some help gluesniffer
                 break;
@@ -453,7 +458,7 @@ HRESULT __stdcall Hooked_GetDisplayModeList(
 
     if (0 == uModesWritten) {
         LogLine(
-            L"Hooked_GetDisplayModeList: Spoofed display mode capacity to " + std::to_wstring(uModesWritten) + L" modes matching config resolution " +
+            L"Hooked_GetDisplayModeList: Spoofed display mode capacity to " + std::to_wstring(uTotalFilteredModes) + L" modes matching config resolution " +
             std::to_wstring(config.dwDisplayWidth) + L"x" + std::to_wstring(config.dwDisplayHeight)
         );
     } else {
