@@ -16,6 +16,7 @@
     <ProjectGuid>{0d3275ec-de49-4f19-a7e7-f87cbec1f5b3}</ProjectGuid>
     <RootNamespace>MadMaxCrashFixMFG</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MadMaxCrashFixReloaded</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">

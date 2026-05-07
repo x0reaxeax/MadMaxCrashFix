@@ -7,6 +7,18 @@
 ## Steam Version
 Only choose ONE of the two versions below. Do NOT use both at the same time.
 
+### "Reloaded" version
+ 1. Place `dxgi.dll` from `steamfix-rld.zip` into the game directory where `MadMax.exe` is located.
+ 2. (Optional) If needed, create/edit `madmaxcfg.json` to set preferred resolution.
+
+`madmaxcfg.json` template:
+```
+{
+  "displayWidth": 1920,
+  "displayHeight": 1080
+}
+```
+
 ### "Band-aid fix" version
  * Place `dinput8.dll` from `steamfix.zip` into the game directory where `MadMax.exe` is located.
 
